@@ -17,6 +17,11 @@ public class Main {
         curso2.setTitulo("Curso FullStack");
         curso2.setDescricao("FullStack em Java");
         curso2.setCargaHoraria(77);
+
+        Curso curso3 = new Curso();
+        curso3.setTitulo("Bootcamp Completo de Desenvolvimento Java FullStack");
+        curso3.setDescricao("Curso completo de Java FullStack");
+        curso3.setCargaHoraria(100);
         //System.out.println(curso2);
         System.out.println("----------------");
 
@@ -36,6 +41,12 @@ public class Main {
         bootcampJava.getConteudos().add(curso1);
         bootcampJava.getConteudos().add(curso2);
         bootcampJava.getConteudos().add(mentoria1);
+
+        Bootcamp bootcampJavaFullStack = new Bootcamp();
+        bootcampJavaFullStack.setNome("BootCamp Desenvolvimento Java FullStack");
+        bootcampJavaFullStack.setDescricao("Descrição Desenvolvimento Java FullStack");
+        bootcampJavaFullStack.getConteudos().add(curso3);
+        bootcampJavaFullStack.getConteudos().add(mentoria1);
 
         Dev devNatanael = new Dev();
         devNatanael.setNome("Natanael de Holanda");
@@ -58,8 +69,17 @@ public class Main {
         System.out.println("Conteúdos Inscritos João Bigodeiro" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos João Bigodeiro" + devJoao.getConteudosConcluidos());
         System.out.println("XP: " + devJoao.calcularTotalXP());
-
-
-
+        System.out.println("------------");
+        Dev devHolanda = new Dev();
+        devHolanda.setNome("Holanda Oliveira");
+        devHolanda.inscreverBootcamp(bootcampJava);
+        devHolanda.inscreverBootcamp(bootcampJavaFullStack);
+        devHolanda.progredir();
+        devHolanda.progredir();
+        devHolanda.progredir();
+        devHolanda.progredir();
+        System.out.println("Conteúdos Inscritos Holanda Oliveira" + devHolanda.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos Holanda Oliveira" + devHolanda.getConteudosConcluidos());
+        System.out.println("XP: " + devHolanda.calcularTotalXP());
     }
 }
